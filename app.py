@@ -9,7 +9,7 @@ import pandas as pd
 import datetime as dt
 import pandas_ta as ta
 import time
-
+print('first line')
 api='z59mkhj6yg8b6c81'
 secret='vd00dbutmiskmpelwfqf4o51s074d72h'
 access_token='RmlX1MokZPOj0ZN7d7Ptl0J4VqbE23ye'
