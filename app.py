@@ -392,23 +392,27 @@ while dt.datetime.now() < start_time:
 print('we have reached start time ')
 print('we are running our strategy now')
 
+import logging
 while True:
-    if dt.datetime.now() > end_time:
-        break
+    # if dt.datetime.now() > end_time:
+    #     break
     ct = dt.datetime.now()
-    
-    # Execute strategy at the start of each time frame
-    if ct.second in range(1, 3) and ct.minute % time_frame == 0:
-        print(f"\n{'='*70}")
-        print(f"Executing strategy at {ct}")
-        print(f"{'='*70}")
-        try:
-            main_strategy()
-        except Exception as e:
-            print(f"Error in main_strategy execution: {e}")
-            import traceback
-            traceback.print_exc()
+    logging.info(f"Current time: {ct}")
+    print(f"Current time: {ct}")
     time.sleep(1)
+    
+    # # Execute strategy at the start of each time frame
+    # if ct.second in range(1, 3) and ct.minute % time_frame == 0:
+    #     print(f"\n{'='*70}")
+    #     print(f"Executing strategy at {ct}")
+    #     print(f"{'='*70}")
+    #     try:
+    #         main_strategy()
+    #     except Exception as e:
+    #         print(f"Error in main_strategy execution: {e}")
+    #         import traceback
+    #         traceback.print_exc()
+    # time.sleep(1)
 
 print('we have reached end time')
 
