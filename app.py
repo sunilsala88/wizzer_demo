@@ -5,8 +5,6 @@
 # Go Short:When the daily Supertrend gives a short signal.The closing price is less than the daily EMA.
 
 
-
-
 import pandas as pd
 import datetime as dt
 import pandas_ta as ta
@@ -14,8 +12,7 @@ import time
 
 api='z59mkhj6yg8b6c81'
 secret='vd00dbutmiskmpelwfqf4o51s074d72h'
-with open('access.txt') as f:
-    access_token=f.read()
+access_token='RmlX1MokZPOj0ZN7d7Ptl0J4VqbE23ye'
 
 from kiteconnect import KiteConnect
 kite = KiteConnect(api_key=api)
@@ -52,7 +49,7 @@ print(f"Token to Symbol mapping: {token_to_symbol}")
 time_frame=1
 days=20
 start_hour,start_min=9,25
-end_hour,end_min=15,15
+end_hour,end_min=18,15
 
 
 def get_open_position():
