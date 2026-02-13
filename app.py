@@ -393,13 +393,17 @@ print('we have reached start time ')
 print('we are running our strategy now')
 
 import logging
+strategy_name = "supertrend_ema_strategy"
+logging.basicConfig(level=logging.INFO, filename=f"{strategy_name}.log",filemode='a',format="%(asctime)s - %(message)s")
+logging.getLogger('ib_async').setLevel(logging.CRITICAL)
+logging.info("Strategy execution started")
 while True:
     # if dt.datetime.now() > end_time:
     #     break
     ct = dt.datetime.now()
     logging.info(f"Current time: {ct}")
     print(f"Current time: {ct}")
-    time.sleep(1)
+    time.sleep(60)
     
     # # Execute strategy at the start of each time frame
     # if ct.second in range(1, 3) and ct.minute % time_frame == 0:
